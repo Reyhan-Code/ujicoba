@@ -1,4 +1,4 @@
-package com.dicoding.ujicoba.ui.dashboard
+package com.dicoding.ujicoba.ui.scan
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

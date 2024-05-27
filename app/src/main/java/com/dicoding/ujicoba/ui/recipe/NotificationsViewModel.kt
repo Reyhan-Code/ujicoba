@@ -1,4 +1,4 @@
-package com.dicoding.ujicoba.ui.notifications
+package com.dicoding.ujicoba.ui.recipe
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

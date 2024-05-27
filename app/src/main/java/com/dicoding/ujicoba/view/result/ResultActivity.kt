@@ -1,10 +1,10 @@
-package com.dicoding.ujicoba.ui.dashboard
+package com.dicoding.ujicoba.view.result
 
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import com.dicoding.ujicoba.ui.helper.ImageClassifierHelper
+import com.dicoding.ujicoba.helper.ImageClassifierHelper
 import com.dicoding.ujicoba.databinding.ActivityResultBinding
 import org.tensorflow.lite.task.vision.classifier.Classifications
 

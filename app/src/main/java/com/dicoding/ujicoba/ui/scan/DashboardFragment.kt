@@ -1,4 +1,4 @@
-package com.dicoding.ujicoba.ui.dashboard
+package com.dicoding.ujicoba.ui.scan
 
 import android.content.Intent
 import android.net.Uri
@@ -12,8 +12,10 @@ import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.dicoding.ujicoba.New.getImageUri
 import com.dicoding.ujicoba.R
 import com.dicoding.ujicoba.databinding.FragmentDashboardBinding
+import com.dicoding.ujicoba.view.result.ResultActivity
 import com.yalantis.ucrop.UCrop
 import java.io.File
 
@@ -36,6 +38,7 @@ class DashboardFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.galleryButton.setOnClickListener { startGallery() }
+        binding.cameraButton.setOnClickListener { startCamera() }
         binding.analyzeButton.setOnClickListener {
             currentImageUri?.let {
                 analyzeImage(it)
@@ -123,6 +126,26 @@ class DashboardFragment : Fragment() {
             startActivity(intent)
         } ?: showToast(getString(R.string.image_classifier_failed))
     }
+
+
+    private fun startCamera() {
+        currentImageUri = getImageUri(requireContext())
+        launcherIntentCamera.launch(currentImageUri)
+    }
+
+    private val launcherIntentCamera = registerForActivityResult(
+        ActivityResultContracts.TakePicture()
+    ) { isSuccess: Boolean ->
+        if (isSuccess) {
+            showImage()
+            currentImageUri?.let { startUCrop(it) }
+        } else {
+            Log.d("Photo Picker", "No media selected")
+        }
+
+    }
+
+
 
     override fun onDestroyView() {
         super.onDestroyView()

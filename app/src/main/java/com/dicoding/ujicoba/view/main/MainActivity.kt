@@ -1,4 +1,4 @@
-package com.dicoding.ujicoba
+package com.dicoding.ujicoba.view.main
 
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView

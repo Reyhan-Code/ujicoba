@@ -1,4 +1,4 @@
-package com.dicoding.ujicoba.ui.notifications
+package com.dicoding.ujicoba.ui.recipe
 
 import android.os.Bundle
 import android.view.LayoutInflater

@@ -1,4 +1,4 @@
-package com.dicoding.ujicoba.ui.helper
+package com.dicoding.ujicoba.helper
 
 import android.content.Context
 import android.graphics.Bitmap
